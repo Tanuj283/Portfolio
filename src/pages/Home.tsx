@@ -13,8 +13,8 @@ export default function Home() {
       title: "Mahindra University", 
       sub: "Bachelor of Technology (CS) • 2023 - Present", 
       desc: "GPA: 5.6/10", 
-      details: "Relevant Coursework: Data Structures, DBMS, Machine Learning, Operating Systems, Probability & Statistics.",
-      tags: "Engineering • DS • ML"
+      details: "Relevant Coursework: Data Structures, DBMS, Advanced Data Science, Operating Systems, Probability & Statistics.",
+      tags: "Engineering • DS • Systems"
     },
     { 
       title: "FIITJEE World School", 

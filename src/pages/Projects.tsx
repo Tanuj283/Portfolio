@@ -33,16 +33,16 @@ export default function Projects() {
       desc: "Used Logistic Regression, Decision Trees, SVM, and Random Forest to evaluate metrics like F1-Score and ROC-AUC. Simulated salary growth and estimated financial impact using predictive analytics.",
       icon: <Calculator className="w-6 h-6" />,
       github: null,
-      tags: ["Python", "ML", "Statistics", "Data Mining"],
+      tags: ["Python", "Computation", "Statistics", "Data Mining"],
       color: "green"
     },
     {
       title: "Data Analysis Training",
       company: "Basis Laboratories Pvt Ltd",
       date: "45 Days",
-      desc: "Proposed a digital inventory tracking solution for chemical intermediates. Designed database workflows for procurement, storage, and distribution modules. Suggested AI-based monitoring concepts.",
+      desc: "Proposed a digital inventory tracking solution for chemical intermediates. Designed database workflows for procurement, storage, and distribution modules. Suggested automated monitoring concepts.",
       icon: <BarChart className="w-6 h-6" />,
-      tags: ["Workflow Design", "AI Monitoring", "SQL"],
+      tags: ["Workflow Design", "Automated Monitoring", "SQL"],
       color: "orange"
     }
   ];
