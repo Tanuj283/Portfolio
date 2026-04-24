@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Mail, Phone, MapPin, Award, BookOpen, Heart, ChevronRight, ChevronDown } from 'lucide-react';
+import { Mail, Phone, BookOpen, ChevronRight, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Home() {
@@ -11,122 +11,145 @@ export default function Home() {
   const education = [
     { 
       title: "Mahindra University", 
-      sub: "Bachelor of Technology (CS) • 2023 - Present", 
+      sub: "B.Tech Computer Science • 2023 - Present", 
       desc: "GPA: 5.6/10", 
       details: "Relevant Coursework: Data Structures, DBMS, Advanced Data Science, Operating Systems, Probability & Statistics.",
-      tags: "Engineering • DS • Systems"
+      tags: "Engineering • Systems"
     },
     { 
       title: "FIITJEE World School", 
-      sub: "10th Grade (SSC) • Completed", 
+      sub: "10th Grade (SSC)", 
       desc: "98% Score",
       details: "Focused on core science and mathematics with secondary emphasis on computer applications.",
-      tags: "SSC • High Distinction"
+      tags: "Science • Tech"
     },
     { 
       title: "Exellencia Junior College", 
-      sub: "Intermediate • Completed", 
+      sub: "Intermediate (MPC)", 
       desc: "85% Score",
       details: "Concentrated on MPC (Mathematics, Physics, Chemistry) stream with pre-engineering focus.",
-      tags: "Intermediate • MPC"
+      tags: "Mathematics • Physics"
     }
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-24 space-y-32">
-      {/* Hero Section */}
-      <section className="flex flex-col items-center text-center">
-        <div className="space-y-8 max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-7xl md:text-9xl font-display font-bold tracking-tighter text-white leading-[0.85]">
-              Nimmala <br /> <span className="text-blue-500">Tanuj</span>
-            </h1>
-            <p className="text-2xl text-gray-400 mt-8 font-light leading-relaxed">
-              Architecting modern digital solutions at <span className="text-white">Mahindra University</span>. 
-              Bridging complex data logic with seamless user experiences.
-            </p>
-          </motion.div>
+    <div className="max-w-6xl mx-auto px-8 py-24 space-y-40">
+      {/* Hero Section - Editorial Aesthetic */}
+      <section className="relative flex flex-col items-start min-h-[60vh] justify-center">
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 1 }}
+           className="relative z-10"
+        >
+          <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-gold mb-6 block">Portfolio Index v.2026</span>
+          <h1 className="text-[12vw] md:text-[10vw] font-display leading-[0.8] mb-12 text-white">
+            Nimmala <br />
+            <span className="italic font-light ml-[2vw]">Tanuj</span>
+          </h1>
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-4"
-          >
-            <a href="mailto:Tanujrao2006@gmail.com" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-all glass px-6 py-3 rounded-full glass-glow">
-              <Mail className="w-4 h-4 text-blue-400" />
-              Tanujrao2006@gmail.com
-            </a>
-            <a href="tel:+919000263945" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-all glass px-6 py-3 rounded-full glass-glow">
-              <Phone className="w-4 h-4 text-blue-400" />
-              +91 9000263945
-            </a>
-          </motion.div>
+          {/* Profile Photo - Architectural Integration */}
+          <div className="absolute top-0 right-0 md:relative md:float-right md:ml-12 md:mb-12 z-20">
+             <motion.div
+               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+               animate={{ opacity: 1, scale: 1, rotate: 0 }}
+               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+               className="w-48 h-48 md:w-80 md:h-80 rounded-full border border-gold/20 p-2 architect-glass group"
+             >
+               <div className="w-full h-full rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 bg-white/5 border border-white/5">
+                 <img 
+                   src="https://rotten-turquoise-zxasrhzaph.edgeone.app/WhatsApp%20Image%202026-04-24%20at%209.14.29%20AM.jpeg" 
+                   alt="Nimmala Tanuj" 
+                   className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
+                   referrerPolicy="no-referrer"
+                 />
+               </div>
+               
+               {/* Decorative Ring */}
+               <div className="absolute inset-0 rounded-full border border-gold/10 scale-110 animate-[pulse_4s_infinite]" />
+             </motion.div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-end max-w-4xl">
+            <p className="text-xl md:text-2xl text-gray-400 font-light leading-relaxed">
+              Synthesizing complex data logic with architectural precision. Operating from <span className="text-white italic">Mahindra University</span>.
+            </p>
+            
+            <div className="flex flex-col gap-4 items-start md:items-end font-mono text-[10px] tracking-widest uppercase text-gray-500">
+              <a href="mailto:Tanujrao2006@gmail.com" className="hover:text-gold transition-colors flex items-center gap-3">
+                <Mail className="w-3 h-3" /> Tanujrao2006@gmail.com
+              </a>
+              <a href="tel:+919000263945" className="hover:text-gold transition-colors flex items-center gap-3">
+                <Phone className="w-3 h-3" /> +91 9000263945
+              </a>
+            </div>
+          </div>
+        </motion.div>
+        
+        {/* Structural rail */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:block">
+          <div className="vertical-rail text-gray-700/50 h-64 flex items-center justify-center">
+            Precision • Quality • Architecture
+          </div>
         </div>
       </section>
 
-      {/* Interactive Timeline Section */}
-      <section className="space-y-12">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="p-3 glass rounded-xl text-blue-400">
-              <BookOpen className="w-6 h-6" />
-            </div>
-            <h2 className="text-4xl font-display font-bold text-white tracking-tight">Academic Timeline</h2>
+      {/* Academic Architecture Section */}
+      <section className="grid lg:grid-cols-[1fr_2fr] gap-20">
+        <div className="space-y-8">
+          <div className="flex items-center gap-6">
+            <span className="text-gold font-display text-4xl italic">01</span>
+            <h2 className="text-5xl font-display text-white">Academic <br /> Hierarchy</h2>
           </div>
-          <p className="text-xs font-mono text-gray-600 uppercase tracking-widest hidden md:block">Click items for details</p>
+          <p className="text-gray-500 font-light text-lg max-w-sm">
+            A chronological survey of engineering foundations and scientific research.
+          </p>
+          <div className="h-[1px] w-24 bg-gold/30" />
         </div>
 
-        <div className="space-y-4 relative">
+        <div className="space-y-4">
           {education.map((edu, i) => (
             <motion.div
               key={edu.title}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               onClick={() => setActiveEdu(activeEdu === i ? null : i)}
-              className={`relative cursor-pointer group transition-all duration-500 overflow-hidden rounded-[2rem] border ${
-                activeEdu === i 
-                  ? 'glass border-blue-500/50 shadow-[0_0_30px_rgba(59,130,246,0.1)]' 
-                  : 'bg-white/5 border-white/5 hover:bg-white/10'
+              className={`architect-glass rounded-[2.5rem] overflow-hidden transition-all duration-700 ${
+                activeEdu === i ? 'border-gold/30 ring-1 ring-gold/10 shadow-[0_0_50px_rgba(197,160,89,0.05)]' : 'hover:border-white/10'
               }`}
             >
-              <div className="p-8 md:p-10 flex items-start gap-6">
-                <div className={`mt-1 h-12 w-12 rounded-2xl flex items-center justify-center transition-all duration-500 ${
-                  activeEdu === i ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/20' : 'bg-white/5 text-gray-500'
-                }`}>
-                  <span className="font-mono font-bold text-lg">{i + 1}</span>
+              <div className="p-10 flex items-start gap-8 cursor-pointer">
+                <div className="w-12 pt-1">
+                   <div className={`h-[1px] transition-all duration-700 ${activeEdu === i ? 'w-full bg-gold' : 'w-4 bg-gray-700'}`} />
                 </div>
                 
                 <div className="flex-1">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                    <h3 className={`text-2xl font-bold transition-colors duration-500 ${activeEdu === i ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                  <div className="flex flex-col md:flex-row justify-between mb-2">
+                    <h3 className={`text-3xl font-display transition-colors duration-700 ${activeEdu === i ? 'text-white' : 'text-gray-400'}`}>
                       {edu.title}
                     </h3>
-                    <span className="text-sm font-mono text-blue-400/80">{edu.desc}</span>
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-gold mt-2 md:mt-1">{edu.desc}</span>
                   </div>
-                  <p className="text-sm text-gray-500 mt-1 italic">{edu.sub}</p>
+                  <p className="text-sm font-mono text-gray-600 uppercase tracking-tighter mb-4">{edu.sub}</p>
                   
                   <AnimatePresence>
                     {activeEdu === i && (
                       <motion.div
-                        initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                        animate={{ height: 'auto', opacity: 1, marginTop: 24 }}
-                        exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl space-y-4">
-                          <p className="text-gray-400 leading-relaxed font-light">
+                        <div className="pt-8 mt-8 border-t border-white/5 space-y-6">
+                          <p className="text-gray-400 text-lg font-light leading-relaxed max-w-2xl">
                             {edu.details}
                           </p>
-                          <div className="flex gap-2">
+                          <div className="flex flex-wrap gap-2">
                             {edu.tags.split(' • ').map(tag => (
-                              <span key={tag} className="text-[10px] font-mono text-gray-600 border border-white/10 px-2 py-0.5 rounded capitalize">
+                              <span key={tag} className="text-[9px] font-mono text-gray-500 border border-white/10 px-3 py-1 rounded-full uppercase tracking-widest">
                                 {tag}
                               </span>
                             ))}
@@ -137,7 +160,7 @@ export default function Home() {
                   </AnimatePresence>
                 </div>
                 
-                <div className={`mt-2 transition-transform duration-500 ${activeEdu === i ? 'rotate-180 text-blue-500' : 'text-gray-700'}`}>
+                <div className={`transition-transform duration-700 text-gold/30 translate-y-1 ${activeEdu === i ? 'rotate-180 text-gold' : ''}`}>
                    {activeEdu === i ? <ChevronDown className="w-6 h-6" /> : <ChevronRight className="w-6 h-6" />}
                 </div>
               </div>
@@ -146,78 +169,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills & Experience Info */}
-      <div className="grid md:grid-cols-2 gap-12">
-        <motion.section 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="space-y-8"
-        >
-          <div className="flex items-center gap-4">
-            <div className="p-3 glass rounded-xl text-blue-400">
-              <Award className="w-6 h-6" />
-            </div>
-            <h2 className="text-3xl font-display font-bold text-white tracking-tight">Core Competencies</h2>
+      {/* Competencies & Methodology */}
+      <section className="grid lg:grid-cols-2 gap-24 py-20 border-y border-white/5">
+        <div className="space-y-12">
+          <div className="flex items-center gap-6">
+            <span className="text-gold font-display text-4xl italic">02</span>
+            <h2 className="text-5xl font-display text-white">Technological <br /> Arsenal</h2>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-4">
             {skills.map(skill => (
-              <motion.span 
-                key={skill} 
-                whileHover={{ scale: 1.05, borderColor: 'rgba(59, 130, 246, 0.5)' }}
-                className="px-5 py-3 glass rounded-2xl text-sm text-gray-300 font-mono transition-all cursor-default"
-              >
+              <span key={skill} className="px-8 py-4 architect-glass rounded-full text-xs font-mono uppercase tracking-widest text-white/70 hover:text-gold hover:border-gold/30 transition-all cursor-default">
                 {skill}
-              </motion.span>
+              </span>
             ))}
           </div>
-        </motion.section>
+        </div>
 
-        <motion.section 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="space-y-8"
-        >
-          <div className="flex items-center gap-4">
-            <div className="p-3 glass rounded-xl text-blue-400">
-              <Heart className="w-6 h-6" />
-            </div>
-            <h2 className="text-3xl font-display font-bold text-white tracking-tight">Focus & Interests</h2>
+        <div className="space-y-12">
+          <div className="flex items-center gap-6">
+            <span className="text-gold font-display text-4xl italic">03</span>
+            <h2 className="text-5xl font-display text-white">Cognitive <br /> Interests</h2>
           </div>
           <div className="flex flex-wrap gap-2">
             {interests.map(interest => (
-              <span key={interest} className="px-4 py-2 text-sm text-gray-500 glass rounded-xl border-white/5 hover:text-white transition-colors">
+              <span key={interest} className="px-6 py-2 text-[10px] font-mono tracking-widest uppercase text-gray-500 border border-white/5 rounded transition-all hover:bg-white/5">
                 {interest}
               </span>
             ))}
           </div>
-        </motion.section>
-      </div>
+        </div>
+      </section>
 
-      {/* About Section */}
-      <motion.section 
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        className="glass rounded-[4rem] p-16 relative overflow-hidden"
-      >
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 blur-[120px]" />
-        <div className="flex flex-col md:flex-row gap-12 items-start relative z-10">
+      {/* Manifesto/System Profile */}
+      <section className="relative group">
+        <div className="absolute inset-0 bg-gold/5 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+        <div className="relative architect-glass rounded-[3rem] p-16 md:p-24 flex flex-col md:flex-row gap-16 md:gap-32 items-start overflow-hidden">
           <div className="md:w-1/3">
-            <h2 className="text-5xl font-display font-bold text-white leading-none">System <br /> <span className="text-blue-500">Profile</span></h2>
+             <span className="text-gold font-mono text-[10px] tracking-[0.5em] uppercase block mb-6">Manifesto 01</span>
+             <h2 className="text-6xl font-display text-white leading-tight">Architectural <br /> <span className="italic font-light">Integrity</span></h2>
           </div>
-          <div className="md:w-2/3 max-w-3xl text-gray-400 leading-relaxed font-light space-y-6 text-xl">
-            <p>
-              Operating as a Computer Science specialist at <span className="text-white font-medium">Mahindra University</span>, I focus on building high-performance architectures using contemporary frameworks.
+          <div className="md:w-2/3 space-y-10">
+            <p className="text-2xl md:text-3xl font-display text-gray-300 leading-snug">
+              Every system is an architecture of logic. My mission is to ensure that this architecture is both <span className="text-white italic">structurally sound</span> and <span className="text-gold italic">elegant</span>.
             </p>
-            <p>
-              My approach integrates <span className="text-blue-400 underline decoration-blue-500/30 underline-offset-8">advanced algorithm design</span> with reactive frontend systems. I specialize in bridging the gap between complex data logic and intuitive user experiences.
+            <div className="h-[1px] w-full bg-white/5" />
+            <p className="text-lg text-gray-500 font-light leading-relaxed">
+               Operating with a philosophy of "Precision over Noise," I translate requirements into robust digital structures. At <span className="text-white">Mahindra University</span>, my research probes the intersection of systems efficiency and data-driven intelligence.
             </p>
           </div>
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 }

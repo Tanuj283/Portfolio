@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, Github, Layers, Database, Calculator, BarChart, ChevronDown, ChevronRight } from 'lucide-react';
+import { Github, ChevronDown, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Projects() {
@@ -9,101 +9,100 @@ export default function Projects() {
     {
       title: "Social Networking App",
       company: "Mahindra University",
-      date: "Jan 2026 - May 2026",
-      desc: "Performed functional and usability testing to identify bugs, UI issues, and performance problems. Designed and executed test cases for authentication, post creation, and user interaction features.",
-      icon: <Layers className="w-6 h-6" />,
+      date: "2026",
+      desc: "Comprehensive functional audit. Engineered test suites for authentication lifecycles and post-injection pathways. Optimized user interaction loops for high-density social traffic.",
       github: "https://github.com/Pranavvarma44/social_networking_app_mu.git",
-      tags: ["Testing", "UI/UX", "Quality Assurance"],
-      color: "blue"
+      tags: ["QA Architecture", "Logic Audit", "Systems"],
+      index: "01"
     },
     {
       title: "Inventory Management Concept",
       company: "Basis Laboratories Pvt Ltd",
-      date: "Jan 2025 - May 2025",
-      desc: "Developed a responsive web application using React, TypeScript, and Vite. Built modular components and multi-page navigation structure. Implemented structured UI for materials, locations, and leadership sections.",
-      icon: <Database className="w-6 h-6" />,
+      date: "2025",
+      desc: "Designed a modular inventory core using React and TypeScript. Architected a hierarchical data structure for multi-location synchronization and leadership transparency.",
       github: "https://github.com/tanuj-tanuj/New-Basis-Laboratories-Inventory",
-      tags: ["React", "TypeScript", "Vite", "Backend"],
-      color: "indigo"
+      tags: ["Full Stack", "Module Design", "Vite"],
+      index: "02"
     },
     {
       title: "Employee Attrition Prediction",
       company: "Mahindra University",
-      date: "Jan 2025 - May 2025",
-      desc: "Used Logistic Regression, Decision Trees, SVM, and Random Forest to evaluate metrics like F1-Score and ROC-AUC. Simulated salary growth and estimated financial impact using predictive analytics.",
-      icon: <Calculator className="w-6 h-6" />,
+      date: "2025",
+      desc: "Statistical modeling of human capital churn. Deployed Random Forest and SVM ensembles to quantify organizational stability and financial volatility.",
       github: null,
-      tags: ["Python", "Computation", "Statistics", "Data Mining"],
-      color: "green"
+      tags: ["Data Science", "Predictive Analytics", "Python"],
+      index: "03"
     },
     {
       title: "Data Analysis Training",
       company: "Basis Laboratories Pvt Ltd",
-      date: "45 Days",
-      desc: "Proposed a digital inventory tracking solution for chemical intermediates. Designed database workflows for procurement, storage, and distribution modules. Suggested automated monitoring concepts.",
-      icon: <BarChart className="w-6 h-6" />,
-      tags: ["Workflow Design", "Automated Monitoring", "SQL"],
-      color: "orange"
+      date: "2025",
+      desc: "Consulted on a digital transformation roadmap for chemical procurement. Standardized database schemas for cross-functional material tracking.",
+      github: null,
+      tags: ["Strategic Design", "Sql Core", "Workflows"],
+      index: "04"
     }
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-24">
+    <div className="max-w-6xl mx-auto px-8 py-24 space-y-32">
       <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="mb-20 space-y-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="max-w-3xl"
       >
-        <span className="text-blue-500 font-mono text-sm tracking-[0.3em] uppercase">Archive_v1.0</span>
-        <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight text-white leading-tight">
-          System <span className="italic font-light text-blue-500/80">Deployments</span>
+        <span className="font-mono text-[10px] tracking-[0.5em] uppercase text-gold mb-6 block">Strategic Archive</span>
+        <h1 className="text-7xl md:text-8xl font-display text-white leading-tight mb-8">
+          System <br /> <span className="italic font-light">Deployments</span>
         </h1>
-        <p className="text-gray-500 max-w-lg text-lg">A technical catalog of engineering projects and research initiatives.</p>
+        <p className="text-xl text-gray-400 font-light leading-relaxed">
+          A definitive catalog of architectural implementations, theoretical research, and engineering initiatives.
+        </p>
       </motion.div>
 
-      <div className="space-y-6 relative">
+      <div className="space-y-4 relative">
+        <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-white/5 hidden lg:block" />
+        
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             onClick={() => setActiveProject(activeProject === index ? null : index)}
-            className={`relative cursor-pointer group transition-all duration-500 overflow-hidden rounded-[2.5rem] border ${
+            className={`architect-glass rounded-[2.5rem] overflow-hidden transition-all duration-700 ${
               activeProject === index 
-                ? 'glass border-blue-500/50 shadow-[0_0_40px_rgba(59,130,246,0.1)]' 
-                : 'bg-white/[0.03] border-white/5 hover:bg-white/10'
+                ? 'border-gold/30 ring-1 ring-gold/10' 
+                : 'hover:border-white/10'
             }`}
           >
-            <div className="p-8 md:p-10 flex items-start gap-8">
-              <div className={`mt-1 h-14 w-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${
-                activeProject === index 
-                  ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/30' 
-                  : 'bg-white/5 text-gray-500 group-hover:text-gray-300 group-hover:bg-white/10'
-              }`}>
-                {project.icon}
+            <div className="p-10 flex items-start gap-8 cursor-pointer">
+              <div className="w-12 pt-2">
+                 <span className={`font-display text-xl transition-colors duration-700 ${activeProject === index ? 'text-gold' : 'text-gray-800'}`}>
+                   {project.index}
+                 </span>
               </div>
               
               <div className="flex-1 min-w-0">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-2">
                   <div>
-                    <span className="text-[10px] font-mono text-blue-500 uppercase tracking-[0.2em]">{project.company}</span>
-                    <h3 className={`text-2xl font-bold transition-colors duration-500 mt-1 ${activeProject === index ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                    <span className="text-[9px] font-mono text-gray-500 uppercase tracking-[0.3em] mb-2 block">{project.company}</span>
+                    <h3 className={`text-3xl font-display transition-colors duration-700 ${activeProject === index ? 'text-white' : 'text-gray-400'}`}>
                       {project.title}
                     </h3>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span className="text-[10px] font-mono text-gray-600 uppercase tracking-tighter whitespace-nowrap">{project.date}</span>
+                  <div className="flex items-center gap-6">
+                    <span className="text-[10px] font-mono text-gray-700 uppercase tracking-widest">{project.date}</span>
                     {project.github && (
                       <a 
                         href={project.github} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="p-3 text-gray-500 hover:text-white glass rounded-full transition-all hover:scale-110 active:scale-95"
+                        className="p-3 text-gold/50 hover:text-gold architect-glass rounded-full transition-all hover:scale-110"
                       >
-                        <Github className="w-5 h-5" />
+                        <Github className="w-4 h-4" />
                       </a>
                     )}
                   </div>
@@ -112,25 +111,26 @@ export default function Projects() {
                 <AnimatePresence>
                   {activeProject === index && (
                     <motion.div
-                      initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                      animate={{ height: 'auto', opacity: 1, marginTop: 32 }}
-                      exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="p-8 bg-white/[0.02] border border-white/5 rounded-3xl space-y-6">
-                        <p className="text-gray-300 leading-relaxed font-light text-lg">
+                      <div className="pt-8 mt-8 border-t border-white/5 space-y-8">
+                        <p className="text-gray-300 font-light text-xl leading-relaxed max-w-3xl">
                           {project.desc}
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {project.tags.map(tag => (
-                            <span key={tag} className="px-3 py-1 bg-white/[0.05] text-[10px] font-mono text-gray-500 border border-white/5 rounded-lg uppercase tracking-widest transition-colors hover:text-blue-400 hover:border-blue-500/20">
+                            <span key={tag} className="px-4 py-1 bg-white/[0.03] text-[9px] font-mono text-gray-500 border border-white/5 rounded-full uppercase tracking-[0.2em] transition-colors hover:text-gold hover:border-gold/20">
                               {tag}
                             </span>
                           ))}
                         </div>
-                        <div className="pt-4 flex items-center gap-2 text-blue-400/60 text-xs font-mono uppercase tracking-[0.2em]">
-                          <div className="w-8 h-[1px] bg-blue-500/30" />
-                          Project Details Validated
+                        <div className="pt-4 flex items-center gap-3 text-gold/40 text-[9px] font-mono uppercase tracking-[0.4em]">
+                          <div className="w-12 h-[1px] bg-gold/20" />
+                          Validated Deployment Record
                         </div>
                       </div>
                     </motion.div>
@@ -138,7 +138,7 @@ export default function Projects() {
                 </AnimatePresence>
               </div>
               
-              <div className={`mt-2 transition-transform duration-500 hidden md:block ${activeProject === index ? 'rotate-180 text-blue-500' : 'text-gray-800'}`}>
+              <div className={`mt-2 transition-transform duration-700 text-gold/30 ${activeProject === index ? 'rotate-180 text-gold' : ''}`}>
                  {activeProject === index ? <ChevronDown className="w-6 h-6" /> : <ChevronRight className="w-6 h-6" />}
               </div>
             </div>
